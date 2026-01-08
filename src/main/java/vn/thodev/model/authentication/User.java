@@ -16,7 +16,7 @@ import java.util.Set;
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user")
+@Table(name = "users")
 public class User extends AbstractEntity<Long> {
     @Column(name = "username", nullable = false)
     private String username;
@@ -43,7 +43,7 @@ public class User extends AbstractEntity<Long> {
     @Column(name = "avatar")
     private String avatar;
 
-    @Column(name = "status", nullable = false, columnDefinition = "TINYINT")
+    @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 
     @ManyToMany(cascade = {CascadeType.MERGE})

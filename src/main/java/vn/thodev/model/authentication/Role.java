@@ -26,7 +26,7 @@ public class Role extends AbstractEntity<Integer> {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "status", nullable = false, columnDefinition = "TINYINT")
+    @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 
     @ManyToMany(mappedBy = "roles")
