@@ -8,6 +8,7 @@ import vn.thodev.model.address.Address;
 import vn.thodev.model.customer.Customer;
 import vn.thodev.model.notification.Notification;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
