@@ -6,8 +6,11 @@ import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.address.Address;
 import vn.thodev.model.cart.Cart;
+import vn.thodev.model.chat.Message;
+import vn.thodev.model.chat.Room;
 import vn.thodev.model.customer.Customer;
 import vn.thodev.model.notification.Notification;
+import vn.thodev.model.order.Order;
 import vn.thodev.model.review.Review;
 import vn.thodev.model.reward.RewardLog;
 import vn.thodev.model.wish.Preorder;
@@ -84,5 +87,14 @@ public class User extends AbstractEntity<Long> {
 
     @OneToMany(mappedBy = "user")
     List<Wish> wishes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order> orders = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Message> messages = new ArrayList<>();
+
+    @OneToOne(mappedBy = "user")
+    private Room room;
 
 }
