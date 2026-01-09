@@ -14,6 +14,7 @@ import java.util.List;
 
 @Setter
 @Builder
+@Entity
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor

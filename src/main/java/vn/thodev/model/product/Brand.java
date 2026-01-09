@@ -1,9 +1,6 @@
 package vn.thodev.model.product;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
@@ -14,6 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
+@Entity
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor

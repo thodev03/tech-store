@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import tools.jackson.databind.JsonNode;
+import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.utils.JsonNodeConverter;
 
 import java.util.HashSet;
@@ -17,7 +18,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "product")
-public class Product {
+public class Product extends AbstractEntity<Long> {
     @Column(name = "name", nullable = false)
     private String name;
 

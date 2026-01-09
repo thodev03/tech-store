@@ -2,6 +2,7 @@ package vn.thodev.model.product;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -12,6 +13,7 @@ import vn.thodev.model.utils.JsonNodeConverter;
 @Getter
 @Setter
 @Builder
+@Entity
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor

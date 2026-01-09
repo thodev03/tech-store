@@ -9,6 +9,7 @@ import vn.thodev.model.authentication.User;
 @Getter
 @Setter
 @Builder
+@Entity
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
