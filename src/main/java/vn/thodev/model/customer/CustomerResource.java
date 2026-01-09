@@ -4,8 +4,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
+import vn.thodev.model.order.OrderResource;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -34,4 +37,7 @@ public class CustomerResource extends AbstractEntity<Integer> {
 
     @OneToMany(mappedBy = "customerResource", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Customer> customers= new HashSet<>();
+
+    @OneToMany(mappedBy = "customerResource", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderResource> orderResources = new ArrayList<>();
 }
