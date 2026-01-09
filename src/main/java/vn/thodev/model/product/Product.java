@@ -27,10 +27,10 @@ public class Product {
     @Column(name = "slug", nullable = false, unique = true)
     private String slug;
 
-    @Column(name = "short_description", nullable = false)
+    @Column(name = "short_description")
     private String shortDescription;
 
-    @Column(name = "description", nullable = false)
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
@@ -60,8 +60,18 @@ public class Product {
     )
     private Set<Tag> tags = new HashSet<>();
 
-
     @Column(name = "specifications", columnDefinition = "JSON")
     @Convert(converter = JsonNodeConverter.class)
     private JsonNode specifications;
+
+    @Column(name = "properties", columnDefinition = "JSON")
+    @Convert(converter = JsonNodeConverter.class)
+    private JsonNode properties;
+
+    @Column(name = "weight")
+    private Double weight;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "guarantee_id")
+    private Guarantee guarantee;
 }
