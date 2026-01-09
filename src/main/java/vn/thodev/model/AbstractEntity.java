@@ -9,14 +9,13 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import java.io.Serializable;
 import java.time.Instant;
 
 @Setter
 @Getter
 @Accessors(chain = true)
 @MappedSuperclass
-public abstract class AbstractEntity<T extends Serializable> implements Serializable {
+public abstract class AbstractEntity<T>   {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
