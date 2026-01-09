@@ -11,6 +11,7 @@ import vn.thodev.model.notification.Notification;
 import vn.thodev.model.review.Review;
 import vn.thodev.model.reward.RewardLog;
 import vn.thodev.model.wish.Preorder;
+import vn.thodev.model.wish.Wish;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -80,5 +81,8 @@ public class User extends AbstractEntity<Long> {
 
     @OneToMany(mappedBy = "user")
     List<Preorder> preorders = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
+    List<Wish> wishes = new ArrayList<>();
 
 }

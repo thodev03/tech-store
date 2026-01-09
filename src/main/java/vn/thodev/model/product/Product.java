@@ -11,6 +11,7 @@ import vn.thodev.model.promotion.Promotion;
 import vn.thodev.model.review.Review;
 import vn.thodev.model.utils.JsonNodeConverter;
 import vn.thodev.model.wish.Preorder;
+import vn.thodev.model.wish.Wish;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -94,4 +95,7 @@ public class Product extends AbstractEntity<Long> {
 
     @OneToMany(mappedBy = "product")
     private List<Preorder> preorders = new ArrayList<>();
+
+    @OneToMany(mappedBy = "product")
+    private List<Wish> wishes = new ArrayList<>();
 }
