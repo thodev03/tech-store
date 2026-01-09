@@ -7,6 +7,7 @@ import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.address.Address;
 import vn.thodev.model.customer.Customer;
 import vn.thodev.model.notification.Notification;
+import vn.thodev.model.review.Review;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -59,8 +60,10 @@ public class User extends AbstractEntity<Long> {
     )
     private Set<Role> roles = new HashSet<>();
 
-   @OneToMany(mappedBy = "user")
-    private List<Notification> nofitications = new ArrayList<>();
+    @OneToMany(mappedBy = "user")
+    private List<Notification> notifications = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews = new ArrayList<>();
 
 }

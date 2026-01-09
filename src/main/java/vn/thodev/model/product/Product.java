@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 import tools.jackson.databind.JsonNode;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.image.Image;
+import vn.thodev.model.review.Review;
 import vn.thodev.model.utils.JsonNodeConverter;
 
 import java.util.ArrayList;
@@ -82,5 +83,8 @@ public class Product extends AbstractEntity<Long> {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "guarantee_id")
     private Guarantee guarantee;
+
+    @OneToMany(mappedBy = "review", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews = new ArrayList<>();
 
 }
