@@ -14,7 +14,7 @@ import vn.thodev.model.authentication.User;
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "brand")
+@Table(name = "notification")
 public class Notification extends AbstractEntity<Long> {
     @Column(name = "type", nullable = false)
     @Enumerated(EnumType.STRING)
