@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.address.Address;
+import vn.thodev.model.customer.Customer;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -56,4 +57,8 @@ public class User extends AbstractEntity<Long> {
 
     @OneToOne(mappedBy = "user")
     private Verification verification;
+
+    @OneToOne(mappedBy = "user")
+    private Customer customer;
+
 }
