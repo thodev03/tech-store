@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.address.Address;
+import vn.thodev.model.cart.Cart;
 import vn.thodev.model.customer.Customer;
 import vn.thodev.model.notification.Notification;
 import vn.thodev.model.review.Review;
@@ -65,5 +66,8 @@ public class User extends AbstractEntity<Long> {
 
     @OneToMany(mappedBy = "user")
     private List<Review> reviews = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Cart> carts = new ArrayList<>();
 
 }
