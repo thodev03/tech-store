@@ -3,6 +3,7 @@ package vn.thodev.model.product;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
+import vn.thodev.model.AbstractEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "unit")
-public class Unit {
+public class Unit extends AbstractEntity<Long> {
     @Column(name = "name", nullable = false)
     private String name;
 
