@@ -6,10 +6,13 @@ import lombok.experimental.Accessors;
 import tools.jackson.databind.JsonNode;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.image.Image;
+import vn.thodev.model.order.OrderVariant;
 import vn.thodev.model.utils.JsonNodeConverter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -38,4 +41,7 @@ public class Variant extends AbstractEntity<Long> {
 
     @OneToMany(mappedBy = "variant",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Image> images = new ArrayList<>();
+
+    @OneToMany(mappedBy = "variant", cascade = CascadeType.ALL)
+    private Set<OrderVariant> orderVariants = new HashSet<>();
 }
