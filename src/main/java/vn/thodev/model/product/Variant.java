@@ -1,14 +1,15 @@
 package vn.thodev.model.product;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Convert;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import tools.jackson.databind.JsonNode;
 import vn.thodev.model.AbstractEntity;
+import vn.thodev.model.image.Image;
 import vn.thodev.model.utils.JsonNodeConverter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -34,4 +35,7 @@ public class Variant extends AbstractEntity<Long> {
 
     @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
+
+    @OneToMany(mappedBy = "variant",cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Image> images = new ArrayList<>();
 }

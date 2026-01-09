@@ -6,9 +6,12 @@ import lombok.*;
 import lombok.experimental.Accessors;
 import tools.jackson.databind.JsonNode;
 import vn.thodev.model.AbstractEntity;
+import vn.thodev.model.image.Image;
 import vn.thodev.model.utils.JsonNodeConverter;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -37,6 +40,9 @@ public class Product extends AbstractEntity<Long> {
 
     @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Image> images = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
@@ -76,4 +82,5 @@ public class Product extends AbstractEntity<Long> {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "guarantee_id")
     private Guarantee guarantee;
+
 }
