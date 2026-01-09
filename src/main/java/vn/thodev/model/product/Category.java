@@ -22,10 +22,10 @@ public class Category extends AbstractEntity<Long> {
     @Column(name = "slug", nullable = false, unique = true)
     private String slug;
 
-    @Column(name = "description", nullable = false)
+    @Column(name = "description")
     private String description;
 
-    @Column(name = "thumbnail", nullable = false)
+    @Column(name = "thumbnail")
     private String thumbnail;
 
     @ManyToOne(fetch = FetchType.LAZY)
