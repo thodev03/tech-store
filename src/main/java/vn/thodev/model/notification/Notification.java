@@ -4,6 +4,7 @@ package vn.thodev.model.notification;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
+import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.authentication.User;
 
 @Getter
@@ -14,7 +15,7 @@ import vn.thodev.model.authentication.User;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "brand")
-public class Notification {
+public class Notification extends AbstractEntity<Long> {
     @Column(name = "type", nullable = false)
     @Enumerated(EnumType.STRING)
     private NotificationType type;
