@@ -3,6 +3,7 @@ package vn.thodev.model.promotion;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
+import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.product.Product;
 
 import java.time.Instant;
@@ -17,7 +18,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "promotion")
-public class Promotion {
+public class Promotion extends AbstractEntity<Long> {
     @Column(name = "name", nullable = false)
     private String name;
 

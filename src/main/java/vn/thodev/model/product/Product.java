@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 import tools.jackson.databind.JsonNode;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.image.Image;
+import vn.thodev.model.promotion.Promotion;
 import vn.thodev.model.review.Review;
 import vn.thodev.model.utils.JsonNodeConverter;
 
@@ -86,5 +87,8 @@ public class Product extends AbstractEntity<Long> {
 
     @OneToMany(mappedBy = "review", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "product")
+    private Set<Promotion> promotions = new HashSet<>();
 
 }
