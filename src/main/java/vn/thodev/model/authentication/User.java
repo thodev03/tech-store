@@ -6,8 +6,11 @@ import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.address.Address;
 import vn.thodev.model.customer.Customer;
+import vn.thodev.model.notification.Notification;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -55,10 +58,8 @@ public class User extends AbstractEntity<Long> {
     )
     private Set<Role> roles = new HashSet<>();
 
-    @OneToOne(mappedBy = "user")
-    private Verification verification;
+   @OneToMany(mappedBy = "user")
+    private List<Notification> nofitications = new ArrayList<>();
 
-    @OneToOne(mappedBy = "user")
-    private Customer customer;
 
 }
