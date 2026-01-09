@@ -54,6 +54,9 @@ public class User extends AbstractEntity<Long> {
     @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 
+    @OneToOne(mappedBy = "user")
+    private Verification verification;
+
     @ManyToMany(cascade = {CascadeType.MERGE})
     @JoinTable(
             name = "user_role",
