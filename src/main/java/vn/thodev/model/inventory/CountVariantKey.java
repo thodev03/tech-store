@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @ToString
@@ -11,7 +13,7 @@ import lombok.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class CountVariantKey {
+public class CountVariantKey implements Serializable {
     @Column(name = "count_id", nullable = false)
     Long countId;
 
