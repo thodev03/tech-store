@@ -5,9 +5,14 @@ import lombok.*;
 import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.authentication.User;
+import vn.thodev.model.cashbook.PaymentMethodType;
+import vn.thodev.model.inventory.Docket;
+import vn.thodev.model.waybill.Waybill;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -72,5 +77,24 @@ public class Order extends AbstractEntity<Long> {
 
     @Column(name = "total_pay", nullable = false, columnDefinition = "DECIMAL(15,5)")
     private BigDecimal totalPay;
+
+    @OneToOne(mappedBy = "order")
+    private Waybill waybill;
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Docket> dockets = new ArrayList<>();
+
+    @Column(name = "payment_method_type", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private PaymentMethodType paymentMethodType;
+
+    @Column(name = "payment_status", nullable = false, columnDefinition = "TINYINT")
+    private Integer paymentStatus;
+
+    @Column(name = "paypal_order_id")
+    private String paypalOrderId;
+
+    @Column(name = "paypal_order_status")
+    private String paypalOrderStatus;
 
 }
