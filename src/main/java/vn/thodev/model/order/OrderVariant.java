@@ -3,7 +3,6 @@ package vn.thodev.model.order;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
-import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.product.Variant;
 
 import java.math.BigDecimal;
@@ -16,7 +15,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "order_variant")
-public class OrderVariant extends AbstractEntity<Long> {
+public class OrderVariant {
     @EmbeddedId
     private OrderVariantKey orderVariantKey = new OrderVariantKey();
 
