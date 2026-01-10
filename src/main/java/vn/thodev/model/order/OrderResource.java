@@ -3,6 +3,7 @@ package vn.thodev.model.order;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
+import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.customer.CustomerResource;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "order_resource")
-public class OrderResource {
+public class OrderResource extends AbstractEntity<Long> {
     @Column(name = "code", nullable = false, unique = true)
     private String code;
 
