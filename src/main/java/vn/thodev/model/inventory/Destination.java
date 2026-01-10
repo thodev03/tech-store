@@ -1,11 +1,13 @@
 package vn.thodev.model.inventory;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.address.Address;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -32,7 +34,6 @@ public class Destination extends AbstractEntity<Long> {
     @Column(name = "status", nullable = false, columnDefinition = "TINYINT")
     private Integer status;
 
-//    @OneToMany(mappedBy = "destination", cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JsonManagedReference
-//    private List<PurchaseOrder> purchaseOrders = new ArrayList<>();
+    @OneToMany(mappedBy = "destination", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PurchaseOrder> purchaseOrders = new ArrayList<>();
 }
