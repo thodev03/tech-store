@@ -23,6 +23,6 @@ public class DocketReason extends AbstractEntity<Long> {
     @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 
-    @OneToMany(mappedBy = "reason" , cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "reason", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Docket> dockets = new ArrayList<>();
 }
