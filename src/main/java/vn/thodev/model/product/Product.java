@@ -83,11 +83,14 @@ public class Product extends AbstractEntity<Long> {
     @Column(name = "weight")
     private Double weight;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Variant> variants = new ArrayList<>();
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "guarantee_id")
     private Guarantee guarantee;
 
-    @OneToMany(mappedBy = "review", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "review")
     private List<Review> reviews = new ArrayList<>();
 
     @ManyToMany(mappedBy = "product")
