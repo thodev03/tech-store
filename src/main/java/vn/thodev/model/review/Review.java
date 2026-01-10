@@ -14,7 +14,7 @@ import vn.thodev.model.product.Product;
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "review")
+@Table(name = "review", uniqueConstraints = @UniqueConstraint(name = "uc_review", columnNames = {"user_id", "product_id"}))
 public class Review extends AbstractEntity<Long> {
     @Column(name = "rating_score", nullable = false, columnDefinition = "SMALLINT")
     private Integer ratingScore;
