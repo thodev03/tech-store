@@ -97,4 +97,6 @@ public class User extends AbstractEntity<Long> {
     @OneToOne(mappedBy = "user")
     private Room room;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<RefreshToken> refreshTokens = new ArrayList<>();
 }
