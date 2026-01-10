@@ -90,10 +90,10 @@ public class Product extends AbstractEntity<Long> {
     @JoinColumn(name = "guarantee_id")
     private Guarantee guarantee;
 
-    @OneToMany(mappedBy = "review")
+    @OneToMany(mappedBy = "product")
     private List<Review> reviews = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "product")
+    @ManyToMany(mappedBy = "products")
     private Set<Promotion> promotions = new HashSet<>();
 
     @OneToMany(mappedBy = "product")
