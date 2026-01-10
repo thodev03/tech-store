@@ -8,7 +8,6 @@ import vn.thodev.model.address.Address;
 import vn.thodev.model.cart.Cart;
 import vn.thodev.model.chat.Message;
 import vn.thodev.model.chat.Room;
-import vn.thodev.model.customer.Customer;
 import vn.thodev.model.notification.Notification;
 import vn.thodev.model.order.Order;
 import vn.thodev.model.review.Review;
@@ -16,7 +15,6 @@ import vn.thodev.model.reward.RewardLog;
 import vn.thodev.model.wish.Preorder;
 import vn.thodev.model.wish.Wish;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

@@ -7,9 +7,7 @@ import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.order.OrderResource;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Getter
 @Setter
