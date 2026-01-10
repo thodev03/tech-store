@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
+import vn.thodev.model.inventory.PurchaseOrder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,4 +59,7 @@ public class Supplier extends AbstractEntity<Long> {
 
     @OneToMany(mappedBy = "supplier",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products = new ArrayList<>();
+
+    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<PurchaseOrder> purchaseOrders = new ArrayList<>();
 }
