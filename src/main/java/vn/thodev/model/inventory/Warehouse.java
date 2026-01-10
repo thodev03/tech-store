@@ -37,6 +37,6 @@ public class Warehouse extends AbstractEntity<Long> {
     @OneToMany(mappedBy = "warehouse", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Count> counts = new ArrayList<>();
 
-    @OneToMany(mappedBy = "docket", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "warehouse", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Docket> dockets = new ArrayList<>();
 }
