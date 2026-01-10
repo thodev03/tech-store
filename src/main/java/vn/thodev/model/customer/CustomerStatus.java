@@ -5,7 +5,9 @@ import lombok.*;
 import lombok.experimental.Accessors;
 import vn.thodev.model.AbstractEntity;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -33,5 +35,5 @@ public class CustomerStatus extends AbstractEntity<Integer> {
     private Integer status;
 
     @OneToMany(mappedBy = "customerStatus", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Customer> customers= new HashSet<>();
+    private List<Customer> customers= new ArrayList<>();
 }

@@ -36,7 +36,7 @@ public class CustomerResource extends AbstractEntity<Integer> {
     private Integer status;
 
     @OneToMany(mappedBy = "customerResource", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Customer> customers= new HashSet<>();
+    private List<Customer> customers= new ArrayList<>();
 
     @OneToMany(mappedBy = "customerResource", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderResource> orderResources = new ArrayList<>();
