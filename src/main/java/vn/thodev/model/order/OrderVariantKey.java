@@ -13,7 +13,7 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderVariantKey implements Serializable {
+public class OrderVariantKey implements Serializable{
     @Column(name = "order_id", nullable = false)
     Long orderId;
 
