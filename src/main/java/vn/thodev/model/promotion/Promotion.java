@@ -31,7 +31,7 @@ public class Promotion extends AbstractEntity<Long> {
     @Column(name = "percent", nullable = false)
     private Integer percent;
 
-    @Column(name = "status", nullable = false, columnDefinition = "TINYINT")
+    @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 
     @ManyToMany(cascade = {CascadeType.MERGE})

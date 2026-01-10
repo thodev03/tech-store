@@ -21,6 +21,6 @@ public class PaymentMethod extends AbstractEntity<Long> {
     @Enumerated(EnumType.STRING)
     private PaymentMethodType code;
 
-    @Column(name = "status", nullable = false, columnDefinition = "TINYINT")
+    @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 }

@@ -23,7 +23,7 @@ public class OrderCancellationReason extends AbstractEntity<Long> {
     @Column(name = "note")
     private String note;
 
-    @Column(name = "status", nullable = false, columnDefinition = "TINYINT")
+    @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 
     @OneToMany(mappedBy = "orderCancellationReason", cascade = CascadeType.ALL, orphanRemoval = true)

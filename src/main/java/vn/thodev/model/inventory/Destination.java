@@ -31,7 +31,7 @@ public class Destination extends AbstractEntity<Long> {
     @JoinColumn(name = "address_id", referencedColumnName = "id", nullable = false, unique = true)
     private Address address;
 
-    @Column(name = "status", nullable = false, columnDefinition = "TINYINT")
+    @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 
     @OneToMany(mappedBy = "destination", cascade = CascadeType.ALL, orphanRemoval = true)

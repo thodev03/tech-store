@@ -29,7 +29,7 @@ public class PurchaseOrder extends AbstractEntity<Long> {
     @Column(name = "note")
     private String note;
 
-    @Column(name = "status", nullable = false, columnDefinition = "TINYINT")
+    @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 
     @ManyToOne(fetch = FetchType.LAZY)
