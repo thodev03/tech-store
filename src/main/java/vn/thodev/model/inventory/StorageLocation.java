@@ -3,6 +3,7 @@ package vn.thodev.model.inventory;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
+import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.product.Variant;
 
 @Getter
@@ -13,7 +14,7 @@ import vn.thodev.model.product.Variant;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "storage_location")
-public class StorageLocation {
+public class StorageLocation extends AbstractEntity<Long> {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "warehouse_id", nullable = false)
     private Warehouse warehouse;
