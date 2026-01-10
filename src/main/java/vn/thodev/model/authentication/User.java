@@ -27,7 +27,7 @@ import java.util.Set;
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
+@Table(name = "`user`")
 public class User extends AbstractEntity<Long> {
     @Column(name = "username", nullable = false)
     private String username;

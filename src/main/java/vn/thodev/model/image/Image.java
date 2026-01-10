@@ -28,7 +28,7 @@ public class Image extends AbstractEntity<Long> {
     @Column(name = "size", nullable = false)
     private Long size;
 
-    @Column(name = "group", nullable = false)
+    @Column(name = "`group`", nullable = false)
     private String group;
 
     @Column(name = "is_thumbnail", nullable = false, columnDefinition = "BOOLEAN")

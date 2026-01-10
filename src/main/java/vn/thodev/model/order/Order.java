@@ -22,12 +22,12 @@ import java.util.Set;
 @Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "order")
+@Table(name = "`order`")
 public class Order extends AbstractEntity<Long> {
     @Column(name = "code", nullable = false, unique = true)
     private String code;
 
-    @Column(name = "status", nullable = false, columnDefinition = "TINYINT")
+    @Column(name = "status", nullable = false, columnDefinition = "SMALLINT")
     private Integer status;
 
     @Column(name = "to_name", nullable = false)
@@ -88,7 +88,7 @@ public class Order extends AbstractEntity<Long> {
     @Enumerated(EnumType.STRING)
     private PaymentMethodType paymentMethodType;
 
-    @Column(name = "payment_status", nullable = false, columnDefinition = "TINYINT")
+    @Column(name = "payment_status", nullable = false, columnDefinition = "SMALLINT")
     private Integer paymentStatus;
 
     @Column(name = "paypal_order_id")
