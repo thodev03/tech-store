@@ -6,6 +6,7 @@ import lombok.experimental.Accessors;
 import tools.jackson.databind.JsonNode;
 import vn.thodev.model.AbstractEntity;
 import vn.thodev.model.image.Image;
+import vn.thodev.model.inventory.DocketVariant;
 import vn.thodev.model.order.OrderVariant;
 import vn.thodev.model.utils.JsonNodeConverter;
 
@@ -44,4 +45,7 @@ public class Variant extends AbstractEntity<Long> {
 
     @OneToMany(mappedBy = "variant", cascade = CascadeType.ALL)
     private Set<OrderVariant> orderVariants = new HashSet<>();
+
+    @OneToMany(mappedBy = "variant" , cascade = CascadeType.ALL)
+    private Set<DocketVariant> docketVariants = new HashSet<>();
 }
